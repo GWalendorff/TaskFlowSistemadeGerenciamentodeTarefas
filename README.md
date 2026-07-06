@@ -36,24 +36,29 @@
 
 ### Diretórios:
     TaskFlowSistemadeGerenciamentodeTarefas/
-    │ README.md
-    │ requirements.txt
     │
-    ├── src/
-    │   ├── task_manager.py
-    │   ├── models.py
-    │   ├── utils.py
+    │─ README.md                # Documento principal 
+    │─ requirements.txt         # Dependências do projeto
     │
-    ├── tests/
-    │   ├── test_task_manager.py
+    │─ src/                 
+    │   │─ __init_.py           # Pacote Python
+    │   │─ models.py            # Classe Tarefa, Prioridade, Status
+    │   │─ task_manager.py      # CRUD de tarefas
+    │   │─ kanban.py            # Quadro Kanban
     │
-    ├── docs/
-    │   ├── diagrama_casos_uso.png
-    │   ├── diagrama_classes.png
+    │─ teste/
+    │   │─ _init__.py           # Pacote de testes
+    │   │─ models.py            # Testes automatizados com Python
+    │   
+    │─ docs/
+    │   │─ readme.md            # Documentação técnica
     │
-    └── .github/
-        └── workflows/
-            └── ci.yml
+    │─ .github/
+    │   │─ workflows/
+    │       │─ ci.yml           # Pipeline GitHub Actions
+    │
+    │
+    │─ conftest.py              # Configuração do Pytest
 
 ### Execução:
 - Pré-requisitos
