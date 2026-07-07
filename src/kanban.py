@@ -17,6 +17,32 @@ Classes:
 from typing import List, Dict
 from src.models import Tarefa, StatusTarefa, Prioridade
 
+class Coluna:
+    """
+    Representa uma coluna do quadro Kanban.
+    """
+
+    def __init__(self, id: int, nome: str, ordem: int):
+        self.id = id
+        self.nome = nome
+        self.ordem = ordem
+        self.tarefas = []
+
+    def adicionar_tarefa(self, tarefa):
+        if tarefa not in self.tarefas:
+            self.tarefas.append(tarefa)
+
+    def remover_tarefa(self, tarefa):
+        if tarefa in self.tarefas:
+            self.tarefas.remove(tarefa)
+
+    def mover_tarefa(self, tarefa, destino):
+        self.remover_tarefa(tarefa)
+        destino.adicionar_tarefa(tarefa)
+
+    def total(self):
+        return len(self.tarefas)
+
 
 class QuadroKanban:
     """
@@ -89,7 +115,7 @@ class QuadroKanban:
         criticas = []
         for tarefas in self._colunas.values():
             for t in tarefas:
-                if t.esta_critica():
+                if t.esta_critica():        # Destaca visualmente tarefas críticas (Prioridade Alta)
                     criticas.append(t)
         return criticas
 
