@@ -88,4 +88,5 @@
 ### Desenvolvedor:
 - Gabriel Augusto Walendorff
 - GitHub: @GWalendorff
-- Curso: Análise e Desenvolvimento de Sistemas — UNIFECAF - 2026
+- Curso: Análise e Desenvolvimento de Sistemas 
+- UNIFECAF - 2026
