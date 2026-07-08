@@ -11,10 +11,12 @@
 - Cadastro de tarefas
 - Atualização de tarefas
 - Exclusão de tarefas
-- Priorização
+- Priorização (Alta, Média, Baixa)
 - Organização em Kanban
+- **Ordenação automática das tarefas por prioridade**
+- **Destaque automático para tarefas críticas (⚠)**
 - Testes automatizados
-- Integração Contínua
+- Integração Contínua (GitHub Actions)
 
 ### Escopo Inicial:
 - CRUD de Tarefas — criar, listar, atualizar e excluir tarefas
@@ -24,7 +26,7 @@
 - Pipeline CI/CD — GitHub Actions para validação contínua
 
 ### Tecnologias:
-- Python
+- Python 3.11
 - Pytest
 - GitHub Actions
 - Git
@@ -82,11 +84,24 @@
 ### Executar Testes:
 - pytest tests/ -v --cov=src --cov-report=term-missing
 
+### Histórico de Mudanças
+
+| Sprint | Solicitação | Implementação |
+|--------|-------------|---------------|
+| Sprint 3 | Destacar automaticamente tarefas críticas | Ordenação automática por prioridade e destaque visual (⚠) para tarefas de 
+prioridade Alta no Quadro Kanban. |
+
 ### Mudança de Escopo:
-- Foi adicionada a funcionalidade de destaque automático para tarefas críticas.
+Foram adicionadas novas funcionalidades ao módulo **QuadroKanban**, permitindo um melhor gerenciamento das tarefas prioritárias:
+
+- Ordenação automática das tarefas por prioridade (Alta → Média → Baixa);
+- Destaque visual (⚠) para tarefas críticas;
+- Método `listar_criticas()` para consulta de tarefas urgentes;
+- Organização automática das tarefas dentro de cada coluna do Kanban.
+
+Essas alterações foram implementadas mantendo compatibilidade com o restante da arquitetura do projeto, sem impacto nas funcionalidades já existentes.
 
 ### Desenvolvedor:
 - Gabriel Augusto Walendorff
 - GitHub: @GWalendorff
-- Curso: Análise e Desenvolvimento de Sistemas 
-- UNIFECAF - 2026
+- Curso: Análise e Desenvolvimento de Sistemas — UNIFECAF - 2026
